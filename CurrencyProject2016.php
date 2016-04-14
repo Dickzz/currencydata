@@ -1,7 +1,7 @@
 
 <?php
 //
-//	Currency Converter 2016
+//	Currency Checker 2016
 //	
 //	http://localhost/
 //
@@ -46,7 +46,7 @@ if ($rSelect == false) {
         
         echo "<br>";
         echo "+OK Invalid Currency.";
-        echo "<br>";
+        //echo "<br>";
         //echo "+OK Reason: Wrong code sent.";
         exit();
     }
