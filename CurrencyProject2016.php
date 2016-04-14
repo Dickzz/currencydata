@@ -53,7 +53,7 @@ if ($rSelect == false) {
     $row = mysql_fetch_array($rSelect);
     $CurrencyName = $row['CurrencyName'];
    
-    echo "<br /> +OK " . $row['CurrencyName'] . " _ " . $row['Price'] . " _ " . $row['Date/Time'];
+    echo " +OK " . $row['CurrencyName'] . " _ " . $row['Price'] . " _ " . $row['Date/Time'];
 }
 mysql_close($link);
 ?>
