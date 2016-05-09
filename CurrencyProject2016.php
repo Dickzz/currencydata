@@ -45,7 +45,7 @@ if ($rSelect == false) {
     if ($count == 0) {
         
         echo "<br>";
-        echo "+OK Invalid Currency.";
+        echo "+OK Invalid CurrencyName.";
         
         exit();
     }
