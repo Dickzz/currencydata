@@ -1,21 +1,20 @@
 
 <?php
-//
-//	Currency Converter 2016
-//	
-//	http://localhost/
-//
-//      http://localhost/PhpPrj2016/CurrencyProject2016.php?smsID=1&MSISDN=359899866747&msp=87&msp=87&smsCurrency=EUR/USD
-//
-//	set error reporting
+
 error_reporting(E_ALL);
+
 $link = mysql_connect('localhost', 'root', '');
+
 if (!$link) {
     echo "-ERR MySQL Error: " . mysql_error();
+    mysql_close($link);
     exit();
 }
-echo"<br>CurrencyProject<br>";
-mysql_select_db("currencydata");
+
+if (!(mysql_select_db("currencydata"))){ 
+    echo "-ERR no selected DB  MySQL Error: ". mysql_error();
+    exit();
+}
 $smsID = $_GET["smsID"];
 $MSISDN = $_GET["MSISDN"];
 $mobileSP = $_GET["msp"];
@@ -39,20 +38,20 @@ $selectSQL = "
 $rSelect = mysql_query($selectSQL);
 if ($rSelect == false) {
     echo "-ERR MySQL Error: " . mysql_error() . "\nSQL: $selectSQL";
+    mysql_close($link);
     exit();
 } else {
     $count = mysql_num_rows($rSelect);
     if ($count == 0) {
-        
-        echo "<br>";
+
         echo "+OK Invalid CurrencyName.";
-        
+        mysql_close($link);
+
         exit();
     }
     $row = mysql_fetch_array($rSelect);
     $CurrencyName = $row['CurrencyName'];
-    
-    echo " +OK " . $row['CurrencyName'] . " _ " . $row['Price'] . " _ " . $row['Date_Time'];
+    echo " +OK " . $row['CurrencyName'] . " is " . $row['Price'] . " at " . $row['Date_Time'];
 }
 mysql_close($link);
 ?>
