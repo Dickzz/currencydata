@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2016 at 01:35 PM
+-- Generation Time: May 13, 2016 at 07:54 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
   `Date_Time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `Price` float(10,5) NOT NULL DEFAULT '0.00000',
   PRIMARY KEY (`CurrencyID`),
-  UNIQUE KEY `Date_Time` (`Date_Time`)
+  UNIQUE KEY `CurrencyName` (`CurrencyName`,`Date_Time`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
