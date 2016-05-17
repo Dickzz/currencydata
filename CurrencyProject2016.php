@@ -25,6 +25,14 @@ $MSISDN = addslashes($MSISDN);
 $mobileSP = addslashes($mobileSP);
 $smsCurrency = addslashes($smsCurrency);
 
+$argArr=explode(':', $smsCurrency );
+$Npar=count($argArr);
+ if ($Npar==2){
+     $smsCurrency=$argArr[0] ;
+     $Amount=$argArr[1] ;
+ }
+
+
 $selectSQL = "
 	SELECT 
 		* 
@@ -51,7 +59,15 @@ if ($rSelect == false) {
     }
     $row = mysql_fetch_array($rSelect);
     $CurrencyName = $row['CurrencyName'];
-    echo " +OK " . $row['CurrencyName'] . " is " . $row['Price'] . " at " . $row['Date_Time'];
+    $Price= $row['Price'];
+    $DateTime=$row['Date_Time'];
+    if ($Npar==2){
+        $AmountConverted=$Price*$Amount;
+        echo " +OK  The converted amount for" . $CurrencyName. " is " .$AmountConverted. " at " . $DateTime;
+    } else
+        {
+        echo " +OK The rate of " . $CurrencyName. " is " . $Price . " at " . $DateTime;
+    }
 }
 mysql_close($link);
 ?>
