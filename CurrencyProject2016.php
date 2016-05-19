@@ -33,6 +33,7 @@ $Npar=count($argArr);
       if ( !is_numeric($Amount) )
      {
         echo "+OK  Invalid type of amount ( Amount=$Amount )"; 
+        mysql_close($link);
         exit();
      }
  }
