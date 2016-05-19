@@ -30,6 +30,11 @@ $Npar=count($argArr);
  if ($Npar==2){
      $smsCurrency=$argArr[0] ;
      $Amount=$argArr[1] ;
+      if ( !is_numeric($Amount) )
+     {
+        echo "+OK  Invalid type of amount ( Amount=$Amount )"; 
+        exit();
+     }
  }
 
 
