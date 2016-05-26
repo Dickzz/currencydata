@@ -13,6 +13,7 @@ if (!$link) {
 
 if (!(mysql_select_db("currencydata"))){ 
     echo "-ERR no selected DB  MySQL Error: ". mysql_error();
+    mysql_close($link);
     exit();
 }
 $smsID = $_GET["smsID"];
