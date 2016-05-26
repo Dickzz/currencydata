@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2016 at 07:54 AM
+-- Generation Time: May 26, 2016 at 10:17 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
   `Price` float(10,5) NOT NULL DEFAULT '0.00000',
   PRIMARY KEY (`CurrencyID`),
   UNIQUE KEY `CurrencyName` (`CurrencyName`,`Date_Time`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `currency`
@@ -50,7 +50,9 @@ INSERT INTO `currency` (`CurrencyID`, `CurrencyName`, `Date_Time`, `Price`) VALU
 (8, 'EUR/CHF', '2016-04-25 07:18:17', 1.09872),
 (9, 'USD/CHF', '2016-04-25 09:20:09', 0.97897),
 (10, 'EUR/USD', '2016-04-25 10:31:26', 1.13755),
-(11, 'EUR/GBP', '2016-04-25 16:20:33', 0.77876);
+(11, 'EUR/GBP', '2016-04-25 16:20:33', 0.77876),
+(12, 'EUR/BGN', '2016-05-24 03:17:28', 1.95610),
+(13, 'USD/BGN', '2016-05-26 08:29:10', 1.75360);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
